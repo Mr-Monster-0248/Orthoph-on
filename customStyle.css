@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "confortaa";
+    src: url(./font/COMFORTAA-REGULAR.ttf);
+}
+
+body {
+    font-family: 'confortaa', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#main-page {
+    margin-top: 60px;
+}
+
+#logoRow {
+    margin-bottom: 60px
+}
+
+.mainLink{
+    font-size: 3em;
+    color: #f3b1d4;
+}
+
+
+.mySidenav {
+    background-color: rgba(243, 177, 212, 0.29);
+    height: 100vh;
+}
+
+.mySidenav .menu {
+    font-size: 2em;
+    padding-left: 20px;
+}
+
+.menu a {
+    color: #f3b1d4;
+}
+
+.menu li {
+    margin-bottom: 20px;
+}
+
+.menu li :hover{
+    transition-duration: 500ms;
+    font-size: 1.5em;
+}
