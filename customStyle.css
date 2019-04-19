@@ -44,3 +44,20 @@ body {
     transition-duration: 500ms;
     font-size: 1.5em;
 }
+
+.exoDisp {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.exoImg {
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    background-color: #f3b1d4;
+    border-radius: 1000px;
+}
+
+.exoTitle {
+    font-size: 2em;
+}
