@@ -58,6 +58,14 @@ body {
     border-radius: 1000px;
 }
 
+.exoDisp a {
+    color: black;
+}
+
+.exoTitle:hover {
+    font-weight: bold;
+}
+
 .exoTitle {
     font-size: 2em;
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="../node_modules/material-design-icons/iconfont/material-icons.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../customStyle.css"/>
+
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<style>
+    #word-display {
+        text-align: center;
+        font-size: 4em;
+        margin-top: 160px;
+    }
+
+    #number-choice {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 4em;
+    }
+
+    #number-choice span:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #divButton {
+        text-align: center;
+    }
+
+    #newGame {
+        background-color: #f3b1d4;
+    }
+</style>
+<body>
+<nav style="-webkit-app-region: drag">
+    <div class="nav-wrapper" style="background-color: #f3b1d4">
+        <a href="index.html" class="brand-logo left" style="-webkit-app-region: no-drag">ORTHOPH'ON</a>
+
+        <ul id="nav-mobile" class="right" style="-webkit-app-region: no-drag">
+            <li><a href="exercises.html"><i class="material-icons">arrow_back</i></a></li>
+            <li><a href="#"><i class="material-icons">show_chart</i></a></li>
+            <li><a href="#"><i id="close-btn" class="material-icons">close</i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <div class="row">
+        <div class="col s4 mySidenav valign-wrapper">
+            <div class="menu ">
+                <ul>
+                    <li><a href="#">Exercises</a></li>
+                    <li><a href="#">Aides</a></li>
+                    <li><a href="#">Réglages</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col s8">
+            <div class="row">
+                <div id="word-display">
+                    <span id="calculus">coucou</span>
+                </div>
+                <div id="number-choice" class="row center">
+
+                </div>
+                <div id="divButton" class="row">
+                    <a id="newGame" onclick="newGameFunction()" class="waves-effect waves-light btn">Calcul suivant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="../res/jquery.js"></script>
+<script src="../scripts/mathematique.js"></script>
+<script>
+    require('../renderer.js');
+
+    function newGameFunction() {
+        document.location.reload(true);
+    }
+</script>
+<script type="text/javascript" src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+</body>
+</html>
