@@ -10,8 +10,10 @@ let myWord = [];
 let secretWord = "";
 let currentEntry = "";
 
-let letters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,é,è,à,ù".toUpperCase();
+let letters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,é,è,à,ù,ç".toUpperCase();
 letters = letters.split(',');
+
+let specialChars = "é, è, à, ù, ç";
 
 function getRandomLine(size) {
     return Math.floor(Math.random() * size);
@@ -22,6 +24,12 @@ function getWordFromFile() {
         $.get("../res/liste_mots.txt", function (data) {
             let wordList = data.split("\n");
             let test = getRandomLine(wordList.length);
+
+						// Prevent from getting special characters
+						while (wordList[test].indexOf("�") !== -1) {
+							test = getRandomLine(wordList.length);
+						}
+
             resolve(wordList[test].toUpperCase());
             reject("COUCOU");
         });
