@@ -2,6 +2,7 @@ const $ = require("../res/jquery");
 
 const wordDisplay = $("#word-display span");
 const wordEntry = $("#word-entry span");
+const reloadButton = $("#divButton");
 
 let currentLetterIndex = 0;
 
@@ -36,14 +37,6 @@ function setWordEntry(word) {
     return entry;
 }
 
-
-getWordFromFile().then((word) => {
-    secretWord = word;
-		currentEntry = setWordEntry(word);
-
-    wordDisplay.html(word);
-    wordEntry.html(currentEntry);
-});
 
 function buildWordtoFind(word, myWord) {
     for(let letter in word) {
@@ -97,4 +90,21 @@ document.addEventListener("keypress", (e) => {
 		}
 
 		wordEntry.html(currentEntry);
+
+		if (currentEntry === secretWord) {
+			reloadButton.show();
+		}
 });
+
+
+
+getWordFromFile().then((word) => {
+    secretWord = word;
+		currentEntry = setWordEntry(word);
+
+    wordDisplay.html(word);
+    wordEntry.html(currentEntry);
+});
+
+
+reloadButton.hide();

@@ -21,6 +21,14 @@
         text-align: center;
         font-size: 4em;
     }
+
+		#divButton {
+			text-align: center;
+    }
+
+    #newGame {
+        background-color: #f3b1d4;
+    }
 </style>
 <body>
 <nav style="-webkit-app-region: drag">
@@ -55,6 +63,10 @@
                 <div id="word-entry">
                     <span id="word-entry-span">_ _ _ _ _ _</span>
                 </div>
+
+								<div id="divButton" class="row">
+										<a id="newGame" onclick="document.location.reload(true)" class="waves-effect waves-light btn">Mot suivant</a>
+								</div>
             </div>
         </div>
     </div>
