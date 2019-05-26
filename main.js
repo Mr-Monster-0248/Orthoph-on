@@ -5,6 +5,9 @@ const {app, BrowserWindow} = require('electron')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+// To disable security warning in the console
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
