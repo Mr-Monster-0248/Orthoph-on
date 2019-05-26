@@ -1,10 +1,14 @@
 {
-  "name": "electron-quick-start",
+  "name": "orthoph-on",
+  "productName": "Orthoph'On",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Application d'aide à la personne",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=img/icons/mac.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . Orthoph'On --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
+    "package-linux": "electron-packager . Orthoph'On --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,7 +21,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.1.1"
+    "electron": "^4.1.1",
+    "electron-packager": "^13.1.1"
   },
   "dependencies": {
     "material-design-icons": "^3.0.1",
