@@ -93,10 +93,12 @@ document.addEventListener("keypress", (e) => {
 		console.log("Looking for:", secretWord[currentLetterIndex]);
 		console.log("Match:", e.key.toUpperCase() === secretWord[currentLetterIndex]);
 
-		if (e.key.toUpperCase() === secretWord[currentLetterIndex]) {
-				currentEntry = updateEntry(e.key);
-		} else if (letters.indexOf(e.key.toUpperCase()) !== -1) {
-			currentEntry = updateEntryWithError(e.key);
+		if (currentLetterIndex < secretWord.length) {
+				if (e.key.toUpperCase() === secretWord[currentLetterIndex]) {
+						currentEntry = updateEntry(e.key);
+				} else if (letters.indexOf(e.key.toUpperCase()) !== -1) {
+						currentEntry = updateEntryWithError(e.key);
+				}
 		}
 
 		wordEntry.html(currentEntry);
