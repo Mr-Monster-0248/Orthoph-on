@@ -33,15 +33,19 @@ function getWordFromFile() {
 							test = getRandomLine(wordList.length);
 						}
 
-            resolve(wordList[test].toUpperCase());
+						// BECAUSE WINDOWS IS DUMB AF
+						let word = wordList[test].toUpperCase().split(String.fromCharCode([13]))[0];
+
+            resolve(word);
             reject("COUCOU");
         });
     });
 }
 
 function setWordEntry(word) {
-    let size = word.length;
+    let size = word.charCodeAt(word.length) === 13 ? word.length - 1 : word.length;
     let entry = "";
+
     for(let i = 0; i < size; i++) {
       	entry += "_ ";
     }
