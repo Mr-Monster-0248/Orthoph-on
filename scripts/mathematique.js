@@ -16,7 +16,9 @@ function isGood(a, b) {
     if (a === b) {
         newGame.show();
         calculus.html(calculus.html().replace(" ?", res));
-    }
+    } else {
+			M.toast({html: "Mauvaise réponse... Essayez encore"});
+		}
 }
 
 function getCalculus () {
@@ -36,17 +38,15 @@ for (let i=0; i < 3; i++) {
         let num = res;
         numberChoice.append("<span class='col s4' id='rans'>" + res + "</span>");
 
-        //$("#rans").on("click", isGood(num, res));
         document.querySelector("#rans").addEventListener("click", function(e) {
             e.stopPropagation();
             isGood(num, res);
         });
     } else {
         let num = getRandomNumber(90);
-        numberChoice.append("<span class='col s4 wans'>" + num + "</span>");
-        //$("#number-choice span.wans").on("click", isGood(num, res));
+        numberChoice.append(`<span class='col s4 wans${i}'> ${num} </span>`);
 
-        document.querySelector("#number-choice span.wans").addEventListener("click", function(e) {
+        document.querySelector(`#number-choice span.wans${i}`).addEventListener("click", function(e) {
             e.stopPropagation();
             isGood(num, res);
         })
