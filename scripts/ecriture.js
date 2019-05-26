@@ -15,6 +15,9 @@ letters = letters.split(',');
 
 let specialChars = "é, è, à, ù, ç";
 
+let currentLevel = 0;
+let levelThresholder = 4;
+
 function getRandomLine(size) {
     return Math.floor(Math.random() * size);
 }
@@ -26,7 +29,7 @@ function getWordFromFile() {
             let test = getRandomLine(wordList.length);
 
 						// Prevent from getting special characters
-						while (wordList[test].indexOf("�") !== -1) {
+						while (wordList[test].indexOf("�") !== -1 || wordList[test].length > (currentLevel + levelThresholder)) {
 							test = getRandomLine(wordList.length);
 						}
 
@@ -101,6 +104,10 @@ document.addEventListener("keypress", (e) => {
 
 		if (currentEntry === secretWord) {
 			reloadButton.show();
+			
+			if (e.key === "Enter") {
+					nextLevel();
+			}
 		}
 });
 
@@ -115,4 +122,24 @@ getWordFromFile().then((word) => {
 });
 
 
-reloadButton.hide();
+function nextLevel() {
+		currentLevel++;
+		reloadButton.hide();
+
+		console.log(`Current level: ${currentLevel}`);
+
+		getWordFromFile().then(word => {
+				secretWord = word;
+				currentEntry = setWordEntry(word);
+
+				currentLetterIndex = 0;
+
+				wordDisplay.html(word);
+				wordEntry.html(currentEntry);
+		});
+
+		reloadButton.hide();
+}
+
+
+nextLevel();
