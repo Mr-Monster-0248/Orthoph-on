@@ -129,7 +129,7 @@ cardDeck.on("click", (e) => {
 
 function nextLevel() {
     for(let card of arrayOfCard) {
-        card.removeClass("validPair clicked");
+        card.removeClass("cat dog duck validPair clicked");
         flipCard(card);
         card.removeClass("flipped");
     }
