@@ -11,7 +11,6 @@ let currentEntry = "";
 
 let letters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,é,è,à,ù".toUpperCase();
 letters = letters.split(',');
-console.log("Letters:", letters);
 
 function getRandomLine(size) {
     return Math.floor(Math.random() * size);
@@ -89,10 +88,6 @@ function updateEntryWithError(key) {
 
 
 document.addEventListener("keypress", (e) => {
-		console.log("Key:", e.key.toUpperCase());
-		console.log("Looking for:", secretWord[currentLetterIndex]);
-		console.log("Match:", e.key.toUpperCase() === secretWord[currentLetterIndex]);
-
 		if (currentLetterIndex < secretWord.length) {
 				if (e.key.toUpperCase() === secretWord[currentLetterIndex]) {
 						currentEntry = updateEntry(e.key);
