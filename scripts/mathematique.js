@@ -16,7 +16,7 @@ const newGame = $("#newGame");
 function isGood(a, b) {
     if (a === b) {
         newGame.show();
-        calculus.html(calculus.html().replace(" ?", a + b));
+        calculus.html(calculus.html().replace(" ?", b));
     } else {
 			M.toast({html: "Mauvaise réponse... Essayez encore"});
 		}
