@@ -43,7 +43,7 @@ function getWordFromFile() {
 }
 
 function setWordEntry(word) {
-    let size = word.charCodeAt(word.length) === 13 ? word.length - 1 : word.length;
+    let size = word.length;
     let entry = "";
 
     for(let i = 0; i < size; i++) {
